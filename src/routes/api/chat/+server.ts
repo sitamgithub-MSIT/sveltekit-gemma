@@ -8,6 +8,13 @@ const groq = createOpenAI({
   apiKey: env.GROQ_API_KEY ?? "",
 });
 
+/**
+ * Handles POST requests to the chat API endpoint.
+ *
+ * This function processes incoming chat messages, applies a system prompt
+ * to ensure responses are in the style of a pirate, and streams the
+ * generated text back to the client.
+ */
 export const POST = (async ({ request }) => {
   const { messages } = await request.json();
 

@@ -1,3 +1,6 @@
+<!--
+  This Svelte component serves as the layout for the application.
+-->
 <script>
   import "./styles.css";
 </script>

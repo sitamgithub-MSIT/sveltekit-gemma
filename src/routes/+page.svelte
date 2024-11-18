@@ -1,3 +1,6 @@
+<!--
+  This Svelte component is a demo AI chat application utilizing the Gemma family of models. 
+-->
 <script lang="ts">
   import { onMount, afterUpdate } from "svelte";
   import { useChat } from "@ai-sdk/svelte";
@@ -36,7 +39,10 @@
 
 <svelte:head>
   <title>Gemma & Svelte</title>
-  <meta name="description" content="Svelte demo AI app utilizing the Gemma family of models" />
+  <meta
+    name="description"
+    content="Svelte demo AI app utilizing the Gemma family of models"
+  />
 </svelte:head>
 
 <div class="page-container">
