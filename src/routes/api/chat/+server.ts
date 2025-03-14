@@ -3,9 +3,9 @@ import { convertToCoreMessages, streamText } from "ai";
 import type { RequestHandler } from "./$types";
 import { env } from "$env/dynamic/private";
 
-const groq = createOpenAI({
-  baseURL: "https://api.groq.com/openai/v1",
-  apiKey: env.GROQ_API_KEY ?? "",
+const model = createOpenAI({
+  baseURL: "https://api-inference.huggingface.co/v1/", // Use other inference providers as well
+  apiKey: env.INFERENCE_API_KEY ?? "",
 });
 
 /**
@@ -20,13 +20,13 @@ export const POST = (async ({ request }) => {
 
   const systemPrompt = {
     role: "system",
-    content:
-      "You are a friendly chatbot who always responds in the style of a pirate.",
+    content: "You are a pirate chatbot who always responds in pirate speak!",
   };
 
   const result = await streamText({
-    model: groq("gemma2-9b-it"),
+    model: model("meta-llama/Llama-3.3-70B-Instruct"),
     messages: convertToCoreMessages([systemPrompt, ...messages]),
+    maxTokens: 500,
   });
 
   return result.toDataStreamResponse();

@@ -1,5 +1,5 @@
 <!--
-  This Svelte component is a demo AI chat application utilizing the Gemma family of models. 
+  This Svelte component is a demo AI chat application utilizing the open-source models.
 -->
 <script lang="ts">
   import { onMount, afterUpdate } from "svelte";
@@ -38,10 +38,10 @@
 </script>
 
 <svelte:head>
-  <title>Gemma & Svelte</title>
+  <title>Sveltekit 🤗</title>
   <meta
     name="description"
-    content="Svelte demo AI app utilizing the Gemma family of models"
+    content="Svelte demo AI app utilizing the open-source models powered by Hugging Face!"
   />
 </svelte:head>
 
@@ -97,9 +97,9 @@
   </section>
   <footer class="footer">
     <p class="cta">
-      Explore the Gemma family of models by <a
-        href="https://ai.google.dev/gemma"
-        target="_blank">Google</a
+      Explore the open-source models powered by <a
+        href="https://huggingface.co/models"
+        target="_blank">Hugging Face</a
       >
     </p>
   </footer>
